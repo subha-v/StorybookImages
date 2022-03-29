@@ -1,5 +1,7 @@
 import cv2
 import numpy as np
+from PIL import Image, ImageDraw, ImageFont
+
 def preproces_image(
     image,
     *,
@@ -46,27 +48,33 @@ def adapt_edges(edges, *, height, width):
 
 if __name__ == "__main__":
 
-    filename_in_final = "./Images/image-00"
+    filename_in_final = "./book-friends/image-00"
     filename_out_final = "newexample.png"
     filename_in = filename_in_final
 
-    # for i in range (18):
-    #     image = cv2.imread(str(filename_in))
-    #     height, width = image.shape[0:2]
-    #     image_preprocessed = preproces_image(image)
-    #     edges = find_edges(image_preprocessed)
-    #     (x_min, x_max), (y_min, y_max) = adapt_edges(
-    #         edges, height=height, width=width
-    #     )
-    #     image_cropped = image[x_min:x_max, y_min:y_max]
-    #     cv2.imwrite(str(filename_out), image_cropped)
-    #     filename_in = filename_in.replace(i, i+1)
-    #     filename_out = filename_out + i
-
-    for i in range(18):
+    for i in range (1,18):
         if (i>9):
-            filename_in_final = "./Images/image-0"
+            filename_in_final = "./book-friends/image-0"
         
-        filename_in = filename_in_final.rstrip(filename_in[-1]) + f'{i}' + ".png"
-        filename_out = filename_out_final + f'{i}'
-        print(filename_in, filename_out)
+        filename_in = filename_in_final.rstrip(filename_in[-1]) + f'{i}' + ".jpg"
+
+        image = cv2.imread(str(filename_in))
+        height, width = image.shape[0:2]
+        image_preprocessed = preproces_image(image)
+        edges = find_edges(image_preprocessed)
+        (x_min, x_max), (y_min, y_max) = adapt_edges(
+            edges, height=height, width=width
+        )
+        image_cropped = image[x_min:x_max, y_min:y_max]
+        filename_out = filename_out_final + f'{i}.jpg'
+        cv2.imwrite(str(filename_out), image_cropped)
+
+
+
+    # for i in range(1,18):
+    #     if (i>9):
+    #         filename_in_final = "./Images/image-0"
+        
+    #     filename_in = filename_in_final.rstrip(filename_in[-1]) + f'{i}' + ".png"
+    #     filename_out = filename_out_final + f'{i}'
+    #     print(filename_in, filename_out)

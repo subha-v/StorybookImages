@@ -1,3 +1,5 @@
+
+
 from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 import os
@@ -15,21 +17,20 @@ url = "https://platform.neuralspace.ai/api/translation/v1/translate"
 
 headers = {}
 headers["Accept"] = "application/json, text/plain, */*"
-headers["authorization"] = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDUxNjU3OTc0LCJkYXRhIjp7ImVtYWlsIjoic3ViaGF2ZWUyQGdtYWlsLmNvbSIsInJvbGUiOiJwcm92aWRlciIsImFwaWtleSI6ImZkOTg5YTcyLTJiZWUtNDFhNy04ZDY4LTdmYjQ0YzJlMjBiMSIsInJlZmVyZW5jZUtleSI6ImZkOTg5YTcyLTJiZWUtNDFhNy04ZDY4LTdmYjQ0YzJlMjBiMSIsInBsYW5UeXBlIjoiZGVmYXVsdCIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2EgKHRoZSkifSwiaWF0IjoxNjQ1MTY1NDM3fQ.SG5vkRPNOGnka_tPrGHeyQ7aaIkBMOnM2kPzRpZYe6M"
+headers["authorization"] = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDg1OTIyOTk2LCJkYXRhIjp7ImVtYWlsIjoiaW5mb0BsaW5ndWlzdGljc2p1c3RpY2VsZWFndWUub3JnIiwicm9sZSI6InByb3ZpZGVyIiwiYXBpa2V5IjoiNzI5Njk2MTQtMWRlYS00YjhjLTljYjctYjFlYmQwYzQzMDI1IiwicmVmZXJlbmNlS2V5IjoiNzI5Njk2MTQtMWRlYS00YjhjLTljYjctYjFlYmQwYzQzMDI1IiwicGxhblR5cGUiOiJkZWZhdWx0IiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMifSwiaWF0IjoxNjQ4NTkxOTM5fQ.ATPJJTfIRcrFn8OrTiTYTcdrXm1bpx8OLY4jVKzBg_8"
 headers["Content-Type"] = "application/json;charset=UTF-8"
 
-
-data = """
-{
-    "text": "My name is Simo.",
+data = f"""
+{{
+    "text": "{booktext['page1']}",
     "sourceLanguage":"en",
     "targetLanguage": "hi"
-}
+}}
 """
-
+# print(data)
  
-# resp = requests.post(url, headers=headers, data=data)
-
+resp = requests.post(url, headers=headers, data=data)
+print(resp.text)
 # response_dict = json.loads(resp.text)
 # translatedbooktext[0] = response_dict["data"]["translated_text"]
 # print(translatedbooktext)
