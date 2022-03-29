@@ -8,7 +8,7 @@ booktext =  {
     'page1': 'My name is Simo.',
     'page2': 'I have four friends.'
 }
-booktext = ["My name is Simo.", "I have four friends."]
+# booktext = ["My name is Simo.", "I have four friends."]
 translatedbooktext = [""]
 
 url = "https://platform.neuralspace.ai/api/translation/v1/translate"
@@ -28,23 +28,9 @@ data = """
 """
 
  
-resp = requests.post(url, headers=headers, data=data)
+# resp = requests.post(url, headers=headers, data=data)
 
-response_dict = json.loads(resp.text)
-translatedbooktext[0] = response_dict["data"]["translated_text"]
-print(translatedbooktext)
-print(response_dict["data"]["translated_text"])
-
-
-path = "./Images/image1.png"
-title_font = ImageFont.truetype('PlayfairDisplay-Regular.ttf', 60)
-hindi_font = ImageFont.truetype('ArialUnicodeMS.ttf', 60)
-
-img1  = Image.open("./Images/image1.png") 
-
-background = Image.open("./Images/backgroundimagereal.jpg")
-editable_background = ImageDraw.Draw(background)
-editable_background.text((1250,200), booktext['page1'], (0, 0, 0), font=title_font)
-editable_background.text((1250,600), translatedbooktext[0], (0, 0, 0), font=hindi_font)
-background.paste(img1, (100,50))
-background.save('Images/pastedimage.jpg', quality=95)
+# response_dict = json.loads(resp.text)
+# translatedbooktext[0] = response_dict["data"]["translated_text"]
+# print(translatedbooktext)
+# print(response_dict["data"]["translated_text"])
