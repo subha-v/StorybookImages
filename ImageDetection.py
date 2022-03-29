@@ -38,10 +38,10 @@ def find_edges(image_preprocessed, *, bw_threshold=150, limits=(0.2, 0.15)):
 def adapt_edges(edges, *, height, width):
     (x_min, x_max), (y_min, y_max) = edges
     x_min2 = x_min
-    x_max2 = x_max + min(250, (height - x_max) * 10 // 11)
-    # could do with less magic numbers
-    y_min2 = max(0, y_min)
-    y_max2 = y_max + min(250, (width - y_max) * 10 // 11)
+    x_max2 = x_max + 100
+    # # could do with less magic numbers
+    y_min2 = y_min 
+    y_max2 = y_max + 20
     return (x_min2, x_max2), (y_min2, y_max2)
 
 if __name__ == "__main__":
