@@ -1,4 +1,4 @@
-from Translating import *
+from src.Translating import *
 from PIL import Image, ImageDraw, ImageFont
 
 ooktext =  {
