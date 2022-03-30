@@ -20,7 +20,7 @@ booktext = ["My name is Simo.", "I have four friends."]
 
 def translate_book(bookArray): 
     translatedbooktext = []
-    for i in range(len(bookArray)):
+    for i in range(len(bookArray)-1):
         passedValue = bookArray[i]
         print("passed value:" + passedValue)
         data = f"""
@@ -30,10 +30,11 @@ def translate_book(bookArray):
             "targetLanguage": "hi"
         }}
         """
-        resp = requests.post(url, headers=headers, data=data)
-        response_dict = json.loads(resp.text)
-        print("translation: " + response_dict["data"]["translated_text"])
-        translatedbooktext.append(response_dict["data"]["translated_text"])
+        # resp = requests.post(url, headers=headers, data=data)
+        # response_dict = json.loads(resp.text)
+        # print("translation: " + response_dict["data"]["translated_text"])
+        # translatedbooktext.append(response_dict["data"]["translated_text"])
+        translatedbooktext.append("उनके नाम ज़िज़ो, लेले, सीसा और अयंदा हैं।")
         print(translatedbooktext)
 
     return translatedbooktext
