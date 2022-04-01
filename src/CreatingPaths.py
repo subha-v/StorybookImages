@@ -22,13 +22,21 @@ def createImagePath(startingPath, endingPath, bookArrayLength):
         output_file_list.append(filename_out)
 
         str_appended_digits = filename_in[-3:]
-        print(str_appended_digits)
+    
         int_appended_digits = int(str_appended_digits)
         int_appended_digits+=1
         str_appended_digits = str(int_appended_digits)
-        filename_in_new = filename_in.rstrip(filename_in[-3])
-        filename_in_new +=str_appended_digits
-        print(filename_in_new)
+        
+        if(int_appended_digits > 9):
+            new_str_appended_digits = "0" + str_appended_digits
+            
+        else:
+            new_str_appended_digits = "00" + str_appended_digits
+        
+        filename_in_new = filename_in[:-3]
+       # print("new filename in"  + filename_in_new)
+        filename_in_new += new_str_appended_digits
+       # print(filename_in_new)
         filename_in_new += ".jpg"
         input_file_list.append(filename_in_new)
 
