@@ -1,44 +1,19 @@
+from venv import create
 from Translating import *
 from ImageProcessing import *
 import os
 from fpdf import FPDF
 from os import listdir
-
+from CreatingPaths import *
 def CreateBook(bookArray, firstImageFilePath):
     translatedbookarray = translate_book(bookArray)
     filename_out_final = "./images/translated-book/page"
     
     final_pdf_list = []
+    output_file_list, input_file_list = createImagePath(firstImageFilePath, filename_out_final, 18)
 
-    for i in range (0,len(bookArray)-1):
-
-        # if(i == 0):
-        #     filename_in_new = "./images/book-friends/image-001.jpg"
-        # elif(i == 10 ):
-        #     filename_in = "./images/book-friends/image-010.jpg"
-        # elif(i > 10):
-        #     filename_in = "./images/book-friends/image-010"
-        #     filename_in_new = filename_in.rstrip(filename_in[-1]) + f'{i % 10}.jpg'
-        # else: 
-        #     filename_in_new = filename_in.rstrip(filename_in[-1]) + f'{i}.jpg'
-
-        if(i > 9):
-            filename_in = firstImageFilePath + "0"
-        else:
-            filename_in = firstImageFilePath + "00"
-
-        filename_out = filename_out_final + f'{i}.jpg'
-        final_pdf_list.append(filename_out)
-
-        str_appended_digits = filename_in[-3:]
-        int_appended_digits = int(str_appended_digits)
-        int_appended_digits+=1
-        str_appended_digits = str(int_appended_digits)
-        filename_in +=str_appended_digits
-        
-
-
-        processTranslatedImage(filename_in+".jpg", bookArray[i], translatedbookarray[i], filename_out)
+    for i in range(0,len(bookArray)-1):
+        processTranslatedImage(input_file_list[i], bookArray[i], translatedbookarray[i], output_file_list[i])
  
 
     return final_pdf_list
