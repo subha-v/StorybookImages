@@ -9,8 +9,7 @@ def CreateBook(bookArray, firstImageFilePath):
     translatedbookarray = translate_book(bookArray)
     
     filename_out_final = "./images/translated-book/page"
-    
-    final_pdf_list = []
+
     output_file_list, input_file_list = createImagePath(firstImageFilePath, filename_out_final, 16)
 
     for i in range(0,len(bookArray)-1):

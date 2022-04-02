@@ -35,7 +35,7 @@ def translate_book(bookArray):
         # print("translation: " + response_dict["data"]["translated_text"])
         # translatedbooktext.append(response_dict["data"]["translated_text"])
         translatedbooktext.append("उनके नाम ज़िज़ो, लेले, सीसा और अयंदा हैं।")
-        print(translatedbooktext)
+        # print(translatedbooktext)
 
     return translatedbooktext
 
