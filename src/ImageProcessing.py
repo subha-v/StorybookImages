@@ -8,17 +8,24 @@ hindi_font = ImageFont.truetype('./src/fonts/ArialUnicodeMS.ttf', 60)
 
 
 def processTranslatedImage(imagePath, engText, translatedText, savedImagePath):
-    wrapper = textwrap.TextWrapper(width=50) 
+    wrapper = textwrap.TextWrapper(width=25) 
     word_list = wrapper.wrap(text=translatedText) 
     translatedTextNew = ''
     for ii in word_list[:-1]:
         translatedTextNew = translatedTextNew + ii + '\n'
     translatedTextNew += word_list[-1]
 
+    wrapper = textwrap.TextWrapper(width=25) 
+    word_list2 = wrapper.wrap(text=engText) 
+    engTextNew = ''
+    for ii in word_list2[:-1]:
+        engTextNew = engTextNew + ii + '\n'
+    engTextNew += word_list2[-1]
+
     background = Image.open("./Images/backgroundimagereal.jpg")
     img = Image.open(imagePath)
     editable_background = ImageDraw.Draw(background)
-    editable_background.text((1350, 200), engText, (0, 0, 0), font=title_font)
+    editable_background.text((1350, 200), engTextNew, (0, 0, 0), font=title_font)
     editable_background.text((1350, 600), translatedTextNew, (0, 0, 0), font=hindi_font)
     half = 1.7
     out = img.resize([int(half * s) for s in img.size])
