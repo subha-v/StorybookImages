@@ -27,7 +27,7 @@ def translate_book(bookArray):
     {{
         "text": "{passedValue}",
         "sourceLanguage":"en",
-        "targetLanguage": "hi"
+        "targetLanguage": "so"
     }}
     """
     time.sleep(3)

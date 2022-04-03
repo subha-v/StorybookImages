@@ -14,7 +14,7 @@ def ExtractBookText(startingFilePath, length):
     eng_booktext_array_newline = []
     eng_booktext_array_raw = []
 
-    for i in range (0,length-1):
+    for i in range (1,length-1):
         # assigning an image from the source path
         img = Image.open(input_files[i])
         # adding some sharpness and contrast to the image 
@@ -35,10 +35,17 @@ def ExtractBookText(startingFilePath, length):
                 st_res+=ch
 
         result2 = st_res.replace("\n", " ")
-
+        result2 = result2 + "()"
+        print("BEfore: " + result2)
+        result2.replace("   ()", " ()", 1)
+        print("After: " + result2)
         eng_booktext_array_raw.append(result2)
 
-    return eng_booktext_array_raw
+    delimiter = ' '
+        # Convert list of items to a string value
+    final_str = delimiter.join(map(str, eng_booktext_array_raw))
+
+    return final_str
 
 if __name__ == "__main__":
     akb_friends_text = ExtractBookText("./images/friends-full-book-images/friends-asb-FKB (1)-", 17)
