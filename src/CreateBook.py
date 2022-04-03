@@ -6,8 +6,8 @@ from fpdf import FPDF
 from os import listdir
 from CreatingPaths import *
 
-def CreateBook(bookArray, firstImageFilePath):
-    translatedbookarray, englishbookarray = translate_book(bookArray)
+def CreateBook(bookArray, firstImageFilePath, language):
+    translatedbookarray, englishbookarray = translate_book(bookArray, language)
     filename_out_final = "./images/translated-book/page"
     output_file_list, input_file_list = createImagePath(firstImageFilePath, filename_out_final, 16)
 

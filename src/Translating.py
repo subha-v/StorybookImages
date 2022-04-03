@@ -20,14 +20,14 @@ headers["Content-Type"] = "application/json;charset=UTF-8"
 booktext = ["My name is Simo.", "I have four friends."]
 
 
-def translate_book(bookArray): 
+def translate_book(bookArray, languageToken): 
     translatedbooktext = ""
     passedValue = bookArray
     data = f"""
     {{
         "text": "{passedValue}",
         "sourceLanguage":"en",
-        "targetLanguage": "so"
+        "targetLanguage": "{languageToken}"
     }}
     """
     time.sleep(3)

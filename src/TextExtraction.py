@@ -37,7 +37,7 @@ def ExtractBookText(startingFilePath, length):
         result2 = st_res.replace("\n", " ")
         result2 = result2 + "()"
         print("BEfore: " + result2)
-        result2.replace("   ()", " ()", 1)
+        result2 = result2.replace("   ()", " ()", 1)
         print("After: " + result2)
         eng_booktext_array_raw.append(result2)
 
