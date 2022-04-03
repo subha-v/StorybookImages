@@ -1,4 +1,3 @@
-from venv import create
 from Translating import *
 from ImageProcessing import *
 import os
