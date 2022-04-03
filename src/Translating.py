@@ -6,13 +6,14 @@ import json
 import requests
 import time
 import re
+from SensitiveInfo import *
 
 # # # DO NOT CHANGE # # #
 url = "https://platform.neuralspace.ai/api/translation/v1/translate"
 
 headers = {}
 headers["Accept"] = "application/json, text/plain, */*"
-headers["authorization"] = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDg1OTIyOTk2LCJkYXRhIjp7ImVtYWlsIjoiaW5mb0BsaW5ndWlzdGljc2p1c3RpY2VsZWFndWUub3JnIiwicm9sZSI6InByb3ZpZGVyIiwiYXBpa2V5IjoiNzI5Njk2MTQtMWRlYS00YjhjLTljYjctYjFlYmQwYzQzMDI1IiwicmVmZXJlbmNlS2V5IjoiNzI5Njk2MTQtMWRlYS00YjhjLTljYjctYjFlYmQwYzQzMDI1IiwicGxhblR5cGUiOiJkZWZhdWx0IiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMifSwiaWF0IjoxNjQ4NTkxOTM5fQ.ATPJJTfIRcrFn8OrTiTYTcdrXm1bpx8OLY4jVKzBg_8"
+headers["authorization"] = auth_token
 headers["Content-Type"] = "application/json;charset=UTF-8"
 
 # # # DO NOT CHANGE # # #

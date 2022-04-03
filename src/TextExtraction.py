@@ -14,7 +14,7 @@ def ExtractBookText(startingFilePath, length):
     eng_booktext_array_newline = []
     eng_booktext_array_raw = []
 
-    for i in range (1,length-1):
+    for i in range (0,length-1):
         # assigning an image from the source path
         img = Image.open(input_files[i])
         # adding some sharpness and contrast to the image 

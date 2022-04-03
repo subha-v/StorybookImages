@@ -8,7 +8,7 @@ from CreatingPaths import *
 
 def CreateBook(bookArray, firstImageFilePath, language):
     translatedbookarray, englishbookarray = translate_book(bookArray, language)
-    filename_out_final = "./images/translated-book/page"
+    filename_out_final = "./images/translated-book2/page"
     output_file_list, input_file_list = createImagePath(firstImageFilePath, filename_out_final, 16)
 
     for i in range(0,len(englishbookarray)-1):
