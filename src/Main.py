@@ -36,10 +36,12 @@ if __name__ == "__main__":
 
     print(new_list)
 
-    pdf = FPDF()
+    # this makes it in letterformat so it's horizontal not vertical
+    pdf = FPDF('L', 'mm', 'A4')
     # imagelist is the list with all image filenames
     for image in pdf_list:
         pdf.add_page()
-        pdf.image(image,0,0,200,150)
-    pdf.output("yourfile.pdf", "F")
+        #the 300 and 250 is the size for the iamge to be blown up to
+        pdf.image(image,0,0,300,225)
+    pdf.output("yourfile2.pdf", "F")
 
