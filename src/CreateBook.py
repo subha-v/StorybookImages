@@ -13,7 +13,7 @@ def CreateBook(bookArray, firstImageFilePath, language):
     output_file_list, input_file_list = createImagePath(firstImageFilePath, filename_out_final, 16)
     print("Output file list: ", output_file_list,  "Input file list", input_file_list)
 
-    for i in range(0,len(englishbookarray)):
+    for i in range(0,len(englishbookarray)-1):
         processTranslatedImage(input_file_list[i], englishbookarray[i], translatedbookarray[i], output_file_list[i])
  
 

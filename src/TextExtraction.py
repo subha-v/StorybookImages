@@ -45,7 +45,7 @@ def ExtractBookText(startingFilePath, length):
         # Convert list of items to a string value
     final_str = delimiter.join(map(str, eng_booktext_array_raw))
 
-    return eng_booktext_array_raw, final_str
+    return final_str
 
 if __name__ == "__main__":
     array, list = ExtractBookText("./images/decision-book/page-", 16)
