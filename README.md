@@ -7,3 +7,4 @@ Steps to Using:
 3. Convert the pdf into a series of images - https://pdftoimage.com/
 4. Rename the pages to page-001, etc. (WILL IMPLEMENT AUTO RENAMING LATER)
 5. Use https://pdfcandy.com/extract-images.html to extract the images into a folder
+6. Rename the images in the folder to start with image-001 (I WILL IMPLEMENT AUTO RENAMING LATER)
