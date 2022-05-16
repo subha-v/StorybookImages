@@ -36,4 +36,4 @@ def processTranslatedImage(imagePath, engText, translatedText, savedImagePath):
     return background.save(savedImagePath, quality=95)
 
 if __name__ == "__main__":
-    processTranslatedImage("./images/book-friends/image-007.jpg", "hallo", "मेरा नाम सिमो है। मेरा नाम सिमो है। मेरा नाम सिमो है। मेरा नाम सिमो है।", "./testing/img.png")
+    processTranslatedImage("./images/decision-book-images/image-001.jpg", "hallo", "Ilali yam yayineengxaki ezininzi. Senza umgca omde wokukha amanzi etephini enye.", "./testing/img.png")

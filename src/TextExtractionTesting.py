@@ -18,7 +18,7 @@ img_edit.save("edited_image.png")
 # converts the image to result and saves it into result variable
 result = pytesseract.image_to_string(img_edit)
 
-l = ['0','1','2','3','4','5','6','7','8','9', '/']
+l = ['0','1','2','3','4','5','6','7','8','9', '/', '“']
 
 st_res=""
 for ch in result:

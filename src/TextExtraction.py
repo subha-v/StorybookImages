@@ -27,7 +27,7 @@ def ExtractBookText(startingFilePath, length):
         # converts the image to result and saves it into result variable
         result = pytesseract.image_to_string(img_edit)
 
-        l = ['0','1','2','3','4','5','6','7','8','9', '/']
+        l = ['0','1','2','3','4','5','6','7','8','9', '/', '“', '”']
 
         st_res=""
         for ch in result:
@@ -45,9 +45,9 @@ def ExtractBookText(startingFilePath, length):
         # Convert list of items to a string value
     final_str = delimiter.join(map(str, eng_booktext_array_raw))
 
-    return final_str
+    return eng_booktext_array_raw, final_str
 
 if __name__ == "__main__":
-    akb_friends_text = ExtractBookText("./images/friends-full-book-images/friends-asb-FKB (1)-", 17)
-    print(akb_friends_text)
+    array, list = ExtractBookText("./images/decision-book/page-", 16)
+    print(array)
 
