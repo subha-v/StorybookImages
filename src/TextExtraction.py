@@ -21,7 +21,7 @@ def ExtractBookText(startingFilePath, length):
         enhancer1 = ImageEnhance.Sharpness(img)
         enhancer2 = ImageEnhance.Contrast(img)
         img_edit = enhancer1.enhance(20.0)
-        img_edit = enhancer2.enhance(1.5)
+        #img_edit = enhancer2.enhance(1.5)
         # save the new image
         img_edit.save("edited_image.png")
         # converts the image to result and saves it into result variable
