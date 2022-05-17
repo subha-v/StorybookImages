@@ -4,6 +4,7 @@ from PIL import Image
 import pytesseract
 from CreateBook import *
 from CreatingPaths import * 
+from string import punctuation
 
 from PIL import Image, ImageEnhance
 
@@ -27,7 +28,8 @@ def ExtractBookText(startingFilePath, length):
         # converts the image to result and saves it into result variable
         result = pytesseract.image_to_string(img_edit)
 
-        l = ['0','1','2','3','4','5','6','7','8','9', '/', '“', '”']
+        l = ['0','1','2','3','4','5','6','7','8','9', '/', '“', '”', '@', '|', '\\']
+        # punctuationStuff = set(punctuation)
 
         st_res=""
         for ch in result:
