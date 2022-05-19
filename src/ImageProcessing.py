@@ -26,7 +26,7 @@ def processTranslatedImage(imagePath, engText, translatedText, savedImagePath):
     img = Image.open(imagePath)
     editable_background = ImageDraw.Draw(background)
     editable_background.text((1350, 200), engTextNew, (0, 0, 0), font=title_font)
-    editable_background.text((1350, 600), translatedTextNew, (0, 0, 0), font=hindi_font)
+    editable_background.text((1350, 800), translatedTextNew, (0, 0, 0), font=hindi_font)
     half = 1.7
     out = img.resize([int(half * s) for s in img.size])
     background.paste(out, (60, 60))

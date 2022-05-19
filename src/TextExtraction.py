@@ -12,7 +12,6 @@ filename = './images/friends-full-book-images/friends-asb-FKB (1)-01.jpg'
 
 def ExtractBookText(startingFilePath, length):
     output_files, input_files = createImagePath(startingFilePath, "any", length)
-    eng_booktext_array_newline = []
     eng_booktext_array_raw = []
 
     for i in range (0,length-1):
@@ -26,19 +25,30 @@ def ExtractBookText(startingFilePath, length):
         # save the new image
         img_edit.save("edited_image.png")
         # converts the image to result and saves it into result variable
-        result = pytesseract.image_to_string(img_edit)
+        result = pytesseract.image_to_string(img)
 
-        l = ['0','1','2','3','4','5','6','7','8','9', '/', '“', '”', '@', '|', '\\']
+        l = ['0','1','2','3','4','5','6','7','8','9', '/', '“', '”', '@', '|', '\\', ')', '_']
         # punctuationStuff = set(punctuation)
-
+        print("Before punctuation and other stuff Removal: ", result)
         st_res=""
         for ch in result:
             if ch not in l:
                 st_res+=ch
 
+        random_string = '''I
+
+ms
+  
+i j ;
+'''
+        st_res.replace(random_string, '')
+
+
+        print("After punctuation and other stuff removal: ", st_res)
+
         result2 = st_res.replace("\n", " ")
         result2 = result2 + "()"
-        print("BEfore: " + result2)
+        print("Before: " + result2)
         result2 = result2.replace("   ()", " ()", 1)
         print("After: " + result2)
         eng_booktext_array_raw.append(result2)
@@ -50,6 +60,6 @@ def ExtractBookText(startingFilePath, length):
     return final_str
 
 if __name__ == "__main__":
-    array, list = ExtractBookText("./images/decision-book/page-", 16)
+    array, list = ExtractBookText("./images/disagreement-book/page-", 8)
     print(array)
 

@@ -5,7 +5,6 @@ from Translating import *
 import tkinter as tk
 from tkinter import simpledialog
 
-
 if __name__ == "__main__":
     ROOT = tk.Tk()
 
