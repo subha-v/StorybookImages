@@ -42,5 +42,5 @@ if __name__ == "__main__":
         pdf.add_page()
         #the 300 and 250 is the size for the iamge to be blown up to
         pdf.image(image,0,0,300,225)
-    pdf.output("yourfile3.pdf", "F")
+    pdf.output("yourfile4.pdf", "F")
 

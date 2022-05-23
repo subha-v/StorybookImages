@@ -29,29 +29,22 @@ def ExtractBookText(startingFilePath, length):
 
         l = ['0','1','2','3','4','5','6','7','8','9', '/', '“', '”', '@', '|', '\\', ')', '_']
         # punctuationStuff = set(punctuation)
-        print("Before punctuation and other stuff Removal: ", result)
+        # print("Before punctuation and other stuff Removal: ", result)
         st_res=""
         for ch in result:
             if ch not in l:
                 st_res+=ch
 
-        random_string = '''I
+        random_string = "I  ms    i j ;"
 
-ms
-  
-i j ;
-'''
-        st_res.replace(random_string, '')
-
-
-        print("After punctuation and other stuff removal: ", st_res)
+       # print("After punctuation and other stuff removal: ", st_res)
 
         result2 = st_res.replace("\n", " ")
-        result2 = result2 + "()"
-        print("Before: " + result2)
-        result2 = result2.replace("   ()", " ()", 1)
-        print("After: " + result2)
-        eng_booktext_array_raw.append(result2)
+        new_st_res = result2.replace(random_string, '')
+        new_st_res = new_st_res + "()"
+        new_st_res = new_st_res.replace("   ()", " ()", 1)
+        print(new_st_res)
+        eng_booktext_array_raw.append(new_st_res)
 
     delimiter = ' '
         # Convert list of items to a string value
@@ -62,4 +55,11 @@ i j ;
 if __name__ == "__main__":
     array, list = ExtractBookText("./images/disagreement-book/page-", 8)
     print(array)
+
+    # random_string = "I  ms    i j ;"
+    # st_res = "I  ms    i j ;  The carpenter said that he had the most important occupation.  Without carpenters you would have no furniture for your houses and schools. ()"
+
+    # new_string=st_res.replace(random_string, '')
+    # print(new_string)
+    
 

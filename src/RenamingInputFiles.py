@@ -1,39 +1,39 @@
 import os
+import sys
 import re
 
-from Main import *
+# old_file_name = "./images/animalsrunaway-book/animalsrunaway-01.jpg"
+# new_file_name = "./images/animalsrunaway-book/page-001.jpg"
+# os.rename(old_file_name, new_file_name)
+# print("Renamed files!")
 
 
 # os.rename(, )
 
 
-# def atoi(text):
-#     return int(text) if text.isdigit() else text
+def atoi(text):
+    return int(text) if text.isdigit() else text
 
-# def natural_keys(text):
-#     '''
-#     alist.sort(key=natural_keys) sorts in human order
-#     http://nedbatchelder.com/blog/200712/human_sorting.html
-#     (See Toothy's implementation in the comments)
-#     '''
-#     return [ atoi(c) for c in re.split(r'(\d+)', text) ]
 
-# i = 1
+def natural_keys(text):
+    return [atoi(c) for c in re.split(r'(\d+)', text)]
 
-# arrayOfFiles = os.listdir("./images/goatdogcow-images/")
-# arrayOfFiles.sort(key=natural_keys)
+
+i = 1
+
+arrayOfFiles = os.listdir("./images/animalsrunaway-images/")
+arrayOfFiles.sort(key=natural_keys)
 # print("array of files: ", arrayOfFiles)
 
-# for file in os.listdir("./images/goatdogcow-images/"):
-    
+for file in os.listdir("./images/animalsrunaway-images"):
+    if(i > 9):
+        numbersEnd = f"0{i}"
 
-#     if(i > 9):
-#             numbersEnd =  f"0{i}"
-            
-#     else:
-#         numbersEnd =  f"00{i}"
+    else:
+        numbersEnd = f"00{i}"
 
-#     new_name = f"image-{numbersEnd}.jpg"
-#     os.rename(arrayOfFiles[i-1], new_name)
+    new_name = f"./images/animalsrunaway-book/image-{numbersEnd}.png"
+    print(new_name)
+    os.rename(file, new_name)
 
-#     i+=1
+    i += 1

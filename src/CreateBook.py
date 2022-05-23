@@ -17,7 +17,7 @@ def CreateBook(bookArray, firstImageFilePath, language):
     output_file_list, input_file_list = createImagePath(firstImageFilePath, filename_out_final, 8)
     print("Output file list: ", output_file_list,  "Input file list", input_file_list)
 
-    for i in range(0,len(englishbookarray)-1):
+    for i in range(0,len(translatedbookarray)-1):
         processTranslatedImage(input_file_list[i], englishbookarray[i], translatedbookarray[i], output_file_list[i])
  
 
@@ -25,21 +25,22 @@ def CreateBook(bookArray, firstImageFilePath, language):
 
 if __name__ == "__main__":
     friendsBook = "'My village had many problems. We made a long line to fetch water from one tap.  () We waited for food donated by others.  () 'We locked our houses early because of thieves.  () 'Many children dropped out of school.  () 'Young girls worked as maids in other villages.  () Young boys roamed around the village while others worked on people's farms.  () When the wind blew, waste paper hung on trees and fences.  () 'People were cut by broken glass that was thrown carelessly.  () Then one day, the tap dried up and our containers were empty.  () My father walked from house to house asking people to attend a village meeting.  () People gathered under a big tree and listened.  () 'My father stood up and said, We need to work together to solve our problems.  () 'Eight-year-old Juma, sitting on atree trunk shouted, I can help with cleaning up.  () 'One woman said, The women can join me to grow food.  () 'Another man stood up and said, The men will dig a well.  ()"
-    pdf_list = CreateBook(friendsBook, "./images/decision-book-images/image-", "xh")
-    dirname = "./images/translated-book2"
-    list_images = (listdir(dirname))
+    
+    # pdf_list = CreateBook(friendsBook, "./images/decision-book-images/image-", "xh")
+    # dirname = "./images/translated-book2"
+    # list_images = (listdir(dirname))
 
 
-    new_list = []
+    # new_list = []
 
-    for i in range (0,len(list_images)-1):
-        new_list.append("./images/translated-book2/" + list_images[i])
+    # for i in range (0,len(list_images)-1):
+    #     new_list.append("./images/translated-book2/" + list_images[i])
 
-    print(new_list)
+    # print(new_list)
 
-    pdf = FPDF('L', 'mm', 'A4')
-    # imagelist is the list with all image filenames
-    for image in pdf_list:
-        pdf.add_page()
-        pdf.image(image,0,0,300,225)
-    pdf.output("yourfile2.pdf", "F")
+    # pdf = FPDF('L', 'mm', 'A4')
+    # # imagelist is the list with all image filenames
+    # for image in pdf_list:
+    #     pdf.add_page()
+    #     pdf.image(image,0,0,300,225)
+    # pdf.output("yourfile2.pdf", "F")
